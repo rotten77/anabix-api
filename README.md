@@ -29,25 +29,25 @@ $allOrganizations = $anabix->request('organizations', 'getAll');
 
 ```php
 $data = array(
-	'criteria' => array("email" => 'honza@optimal-marketing.cz'),
+	'criteria' => array("email" => 'your@email.com'),
 );
 $getUser = $createActivity = $anabix->request('contacts', 'getAll', $data);
 ```
 
-#### ...and add a activity for him
+#### ...and add activity for him
 
 ```php
-	foreach($getUser['data'] as $contact) {
+foreach($getUser['data'] as $contact) {
 
-		$data = array(
-			"idContact" => $contact['idContact'],
-			"title" => "New activity",
-			"body" => "Info about new activity",
-			"type" => "note",
-			"timestamp" => strtotime("now")
-		);
+	$data = array(
+		"idContact" => $contact['idContact'],
+		"title" => "New activity",
+		"body" => "Info about new activity",
+		"type" => "note",
+		"timestamp" => strtotime("now")
+	);
 
-		$createActivity = $anabix->request('activities', 'create', $data);
+	$createActivity = $anabix->request('activities', 'create', $data);
 
-	}
+}
 ```
