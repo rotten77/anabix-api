@@ -31,7 +31,7 @@ $allOrganizations = $anabix->request('organizations', 'getAll');
 $data = array(
 	'criteria' => array("email" => 'your@email.com'),
 );
-$getUser = $createActivity = $anabix->request('contacts', 'getAll', $data);
+$getUser = $anabix->request('contacts', 'getAll', $data);
 ```
 
 #### ...and add activity for him
